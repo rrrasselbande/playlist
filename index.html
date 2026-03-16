@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Interaktive & automatische CD</title>
+<title>Interaktive CD</title>
 <style>
 /* Lokale Schrift einbinden */
 @font-face {
@@ -30,7 +30,7 @@ body {
 .cd {
     width: 300px;
     height: 300px;
-    background-image: url("cd.png");
+    background-image: url("cd.png"); /* exakt so, wie die Datei heißt */
     background-size: cover;
     background-position: center;
     border-radius: 50%;
@@ -38,6 +38,7 @@ body {
     touch-action: none;
     user-select: none;
     transition: transform 0.1s linear;
+    margin-bottom: 100px; /* nach oben verschoben */
 }
 
 /* Footer */
@@ -93,7 +94,8 @@ let startAngle = 0;
 let currentRotation = 0;
 
 // Minimale automatische Rotation
-let autoRotationSpeed = 0.3; // sehr langsam
+let autoRotationSpeed = 0.15; // langsam
+
 function rotateCD() {
     if (!isDragging) {
         currentRotation += autoRotationSpeed;
